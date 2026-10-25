@@ -1,0 +1,21 @@
+services:
+  dev-env:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ubuntu-dev
+    stdin_open: true  # Keep STDIN open (-i)
+    tty: true         # Allocate pseudo-TTY (-t)
+    volumes:
+      # Mount the entire D:\Rupesh directory into the container's workspace
+      - D:/Rupesh:/home/developer/workspace
+      # Persist bash history across container restarts
+      - dev-bashhistory:/home/developer/commandhistory
+      # Share your Windows SSH keys (read-only) for git clone / push / pull
+      - C:/Users/Acer/.ssh:/home/developer/.ssh:ro
+    environment:
+      - HISTFILE=/home/developer/commandhistory/.bash_history
+
+volumes:
+  dev-bashhistory:
+

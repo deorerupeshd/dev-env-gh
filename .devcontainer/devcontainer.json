@@ -1,0 +1,28 @@
+{
+  "name": "Ubuntu Dev Environment",
+  "dockerComposeFile": [
+    "../docker-compose.yml"
+  ],
+  "service": "dev-env",
+  "workspaceFolder": "/home/developer/workspace",
+  "remoteUser": "developer",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash"
+      },
+      "extensions": [
+        "ms-kubernetes-tools.vscode-kubernetes-tools",
+        "ms-azuretools.vscode-docker",
+        "hashicorp.terraform",
+        "github.vscode-github-actions",
+        "eamodio.gitlens",
+        "timonwong.shellcheck",
+        "foxundermoon.shell-format",
+        "humao.rest-client",
+        "ms-python.python",
+        "yzhang.markdown-all-in-one"
+      ]
+    }
+  }
+}
